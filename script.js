@@ -1,3 +1,4 @@
+// déclarations
 let total = 0;
 let affichage = '0';
 let operateurPrecedent;
@@ -8,9 +9,9 @@ document.querySelectorAll('.btnChiffre').forEach(btn => {
         const valeur = btn.textContent;
         
         if (affichage === '0') {
-            affichage = valeur; // Remplace '0' par le chiffre cliqué
+            affichage = valeur; // remplace '0' par le chiffre cliqué
         } else {
-            affichage += valeur; // Ajoute le chiffre à la suite
+            affichage += valeur; // ajoute le chiffre à la suite
         }
         
         document.getElementById('affichage').textContent = affichage;
@@ -32,10 +33,12 @@ document.querySelectorAll('.btnOperateur').forEach(btn => {
     });
 });
 
+// appel de la fonction calculer lors du clique sur '='
 document.querySelector('.btnEquals').addEventListener('click', function(){
     calculer();
 })
 
+// permet de reset la calculatrice
 document.querySelector('.btnReset').addEventListener('click', function(){
     affichage = '0';
     total = 0
@@ -43,6 +46,7 @@ document.querySelector('.btnReset').addEventListener('click', function(){
     document.getElementById('affichage').textContent = '0';
 })
 
+// permet de supprimer le chiffre sur lequel on vient de cliquer
 document.querySelector('.btnSupp').addEventListener('click', function(){
     if(affichage == '0'){
         affichage = '0';
@@ -51,7 +55,7 @@ document.querySelector('.btnSupp').addEventListener('click', function(){
     document.getElementById('affichage').textContent = affichage;
 })
 
-// fonction permettant d'effectuer les calculs
+// fonction permettant d'effectuer les calculs et d'afficher le résultat
 function calculer() {
     const nombre = parseFloat(affichage);
     
@@ -70,7 +74,7 @@ function calculer() {
             break;
     }
     
-    affichage = '0'; // Réinitialise pour le prochain nombre
+    affichage = '0'; // réinitialise pour le prochain nombre
     document.getElementById('affichage').textContent = total;
 }
 
