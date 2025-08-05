@@ -1,0 +1,18 @@
+body{
+    text-align: center;
+    font-size: 50px;
+    background-color: black;
+}
+
+section{
+    border: 1px solid pink;
+}
+
+button{
+    font-size: 30px;
+    border-color: white;
+}
+
+#affichage{
+    color: white;
+}
